@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spendwise - My Budget Tracker</title>
+  <meta name="description" content="Track your income and expenses in one place with Spendwise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">S</span>
+        <h2>Spendwise</h2>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#add-expense" class="nav-item">Add Expense</a>
+        <a href="#your-expenses" class="nav-item">Your Expenses</a>
+        <a href="#financial-tips" class="nav-item">Financial Tips</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Monthly Budget</p>
+        <strong>Ksh 45,000</strong>
+        <div class="progress"><span></span></div>
+        <small>68% used</small>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+
+      <!-- HEADER -->
+      <header class="main-header">
+        <div class="header-text">
+          <h1>Welcome back, Brian</h1>
+          <p>Track your income and expenses in one place</p>
+        </div>
+        <div class="header-actions">
+          <span class="date">Thu, 12 Nov 2026</span>
+          <button type="button" class="btn-add">+ Add Expense</button>
+          <div class="avatar" aria-label="Brian's profile">B</div>
+        </div>
+      </header>
+
+      <!-- SUMMARY -->
+      <section class="summary" aria-label="Budget summary">
+        <div class="summary-card" tabindex="0">
+          <span>Total Spent</span>
+          <strong>Ksh 30,500</strong>
+        </div>
+        <div class="summary-card green" tabindex="0">
+          <span>Remaining</span>
+          <strong>Ksh 14,500</strong>
+        </div>
+        <div class="summary-card blue" tabindex="0">
+          <span>Savings Goal</span>
+          <strong>Ksh 10,500</strong>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <h2 class="section-title">Categories</h2>
+
+      <section class="cards" aria-label="Expense categories">
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">🍔</span><span class="badge">Food</span></div>
+          <h3>Ksh 7,500</h3>
+          <p>Budget: Ksh 10,000. 75% used</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">🏠</span><span class="badge">Rent</span></div>
+          <h3>Ksh 15,000</h3>
+          <p>Budget: Ksh 15,000. 100% used</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">🚗</span><span class="badge">Transport</span></div>
+          <h3>Ksh 5,000</h3>
+          <p>Budget: Ksh 5,000. 80% used</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">🎬</span><span class="badge">Entertainment</span></div>
+          <h3>Ksh 3,000</h3>
+          <p>Budget: Ksh 3,000. 60% used</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">💰</span><span class="badge">Savings</span></div>
+          <h3>Ksh 2,000</h3>
+          <p>Budget: Ksh 2,000. 50% used</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <div class="card-top"><span class="icon">💡</span><span class="badge">Utilities</span></div>
+          <h3>Ksh 1,000</h3>
+          <p>Budget: Ksh 1,000. 40% used</p>
+        </article>
+      </section>
+
+      
+      <details class="box">
+        <summary>How to use this tracker</summary>
+        <div class="details-content">
+          <p>Enter your expense name, amount, select a category, choose a date, and click Add Expense to add it to the table.</p>
+        </div>
+      </details>
+
+      
+      <section class="box" id="financial-tips">
+        <h2>Financial Tips</h2>
+        <p><strong>Save first:</strong> Move 20% to savings before you spend.</p>
+        <p><strong>Track small leaks:</strong> Ksh 200 daily = Ksh 6,000 a month.</p>
+        <p><strong>Use cash for food:</strong> It makes overspending harder to miss.</p>
+      </section>
+
+      <!-- ADD EXPENSE FORM -->
+      <form class="box" id="add-expense">
+        <h2>Add Expense</h2>
+
+        <label for="expense-name">Expense Name</label>
+        <input type="text" id="expense-name" name="expense-name" placeholder="e.g. Groceries" required>
+
+        <label for="expense-amount">Amount (Ksh)</label>
+        <input type="number" id="expense-amount" name="expense-amount" placeholder="e.g. 5000" min="1" required>
+
+        <label for="expense-category">Category</label>
+        <select id="expense-category" name="expense-category" required>
+          <option value="">Select a category</option>
+          <option value="Food">Food</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Rent">Rent</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Savings">Savings</option>
+        </select>
+
+        <label for="expense-date">Date</label>
+        <input type="date" id="expense-date" name="expense-date" value="2026-11-12" required>
+
+        <button type="submit" id="add-expense-btn" class="btn-add">Add Expense</button>
+      </form>
+
+      <section class="box" id="your-expenses">
+        <h2>Your Expenses</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by index.js -->
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
